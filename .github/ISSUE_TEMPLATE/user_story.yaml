@@ -1,0 +1,106 @@
+name: 🧩 User Story
+description: Create a new user story to describe user needs and business value that links to epics in the qara_foundation repository
+labels: [story, task]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## 🧩 User Story
+
+        Please describe the story in the classic format:
+        **As a [role], I want [feature] so that [benefit]**
+
+  - type: dropdown
+    id: related_epic
+    attributes:
+      label: Related Epic
+      description: Most epics should be specified in Epic Link field below
+      multiple: false
+      options:
+        - None
+        - Other (specify in Epic Link field below)
+    validations:
+      required: true
+
+  - type: dropdown
+    id: story_points
+    attributes:
+      label: Story Points
+      description: Estimate the complexity/effort of this story using the Fibonacci scale
+      multiple: false
+      options:
+        - "1"
+        - "2"
+        - "3"
+        - "5"
+        - "8"
+        - "13"
+        - "21"
+    validations:
+      required: true
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      description: Clearly articulate who the user is, what functionality they need, and the specific value they'll gain
+      placeholder: |
+        As a [role],
+        I want [feature],
+        So that [benefit]
+    validations:
+      required: true
+
+  - type: textarea
+    id: acceptance_criteria
+    attributes:
+      label: Acceptance Criteria
+      description: List the specific conditions that must be met for this story to be considered complete (use GitHub checkboxes format)
+      placeholder: |
+        - [ ] Criterion 1: Expected behavior/outcome
+        - [ ] Criterion 2: Expected behavior/outcome
+        - [ ] Criterion 3: Expected behavior/outcome
+    validations:
+      required: true
+
+  - type: textarea
+    id: dependencies
+    attributes:
+      label: Dependencies
+      description: List any technical dependencies, prerequisite stories, or external systems required for implementation
+      placeholder: |
+        - Technical dependency 1 (e.g., API endpoint, database schema)
+        - Prerequisite story: #123
+        - External system: [System name]
+    validations:
+      required: false
+
+  - type: textarea
+    id: technical_notes
+    attributes:
+      label: Technical Notes
+      description: Add implementation details, architecture considerations, or technical constraints that would help developers understand how to implement this story
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: definition_of_done
+    attributes:
+      label: Definition of Done
+      description: Ensure all these requirements are met before the story can be considered complete
+      options:
+        - label: All acceptance criteria have been met and verified
+        - label: Unit tests are written and passing
+        - label: Integration tests are passing
+        - label: Documentation has been updated to reflect changes
+        - label: Code has been reviewed and approved by team members
+        - label: Changes are deployed to the test environment and validated
+
+  - type: input
+    id: epic_link
+    attributes:
+      label: Epic Link
+      description: "Link to the specific epic in qara_foundation (format: qara_foundation#issue_number)"
+      placeholder: "qara_foundation#123"
+    validations:
+      required: false

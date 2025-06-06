@@ -1,0 +1,102 @@
+name: 🎯 Epic
+description: Strategic initiative spanning multiple repositories for business/technical goals
+labels: [epic, needs-breakdown]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## 🎯 Epic - Strategic Initiative
+        
+        Use this template for high-level business or technical initiatives that span multiple repositories or require significant coordination.
+
+  - type: textarea
+    id: business_objective
+    attributes:
+      label: Business Objective
+      description: What business goal does this epic achieve? What value does it deliver?
+      placeholder: |
+        Enable pilot client to manage their regulatory documents through our platform...
+    validations:
+      required: true
+
+  - type: textarea
+    id: success_criteria
+    attributes:
+      label: Success Criteria
+      description: How will we know this epic is complete? What are the measurable outcomes?
+      placeholder: |
+        - [ ] Pilot client can upload documents
+        - [ ] Documents are automatically processed
+        - [ ] User can view compliance status
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: affected_repositories
+    attributes:
+      label: Affected Repositories
+      description: Which repositories will need changes for this epic?
+      options:
+        - label: qara-product-svc
+        - label: qara-document-svc  
+        - label: qara-journey-svc
+        - label: qara-ai-orchestrator
+        - label: qara-ai-agent
+        - label: qara_iac_azure
+        - label: qara_helm_charts
+        - label: Frontend/Portal
+        - label: Other (specify in description)
+
+  - type: dropdown
+    id: priority
+    attributes:
+      label: Priority
+      description: What's the business priority of this epic?
+      options:
+        - P0 - Critical (blocks pilot launch)
+        - P1 - High (important for pilot)
+        - P2 - Medium (nice to have for pilot) 
+        - P3 - Low (post-pilot)
+    validations:
+      required: true
+
+  - type: input
+    id: target_milestone
+    attributes:
+      label: Target Milestone
+      description: When should this epic be completed?
+      placeholder: "August 2025 Pilot Launch"
+    validations:
+      required: true
+
+  - type: textarea
+    id: technical_approach
+    attributes:
+      label: Technical Approach
+      description: High-level technical approach or architecture considerations
+      placeholder: |
+        This will require changes to the document processing pipeline...
+    validations:
+      required: false
+
+  - type: textarea
+    id: dependencies
+    attributes:
+      label: Dependencies
+      description: What other epics, external systems, or resources does this depend on?
+      placeholder: |
+        - Depends on Epic #123 (Authentication)
+        - Requires Azure AI Document Intelligence setup
+    validations:
+      required: false
+
+  - type: textarea
+    id: risks
+    attributes:
+      label: Risks & Mitigation
+      description: What could go wrong and how will we address it?
+      placeholder: |
+        Risk: AI service may have accuracy issues
+        Mitigation: Implement human review workflow
+    validations:
+      required: false

@@ -1,0 +1,69 @@
+name: 🚀 CI/CD Change
+description: Propose a change or improvement to the CI/CD pipeline or build system.
+labels: [type:ci-cd]
+body:
+- type: markdown
+  attributes:
+    value: |
+      ## 🚀 CI/CD Change
+
+      Use this template to describe changes to the continuous integration or deployment setup, such as GitHub Actions, GitLab CI, Jenkins, etc.
+
+- type: textarea
+  id: change-summary
+  attributes:
+    label: ✨ Summary
+    description: What is the purpose of this change?
+    placeholder: |
+      E.g., Add caching for dependencies in the build step to reduce pipeline duration.
+  validations:
+    required: true
+
+- type: textarea
+  id: details
+  attributes:
+    label: 🛠️ Details
+    description: What is being changed in the CI/CD system?
+    placeholder: |
+      E.g., Modify `.github/workflows/build.yml` to add `actions/cache` for node_modules.
+  validations:
+    required: true
+
+- type: textarea
+  id: motivation
+  attributes:
+    label: 📈 Motivation
+    description: Why is this change important or beneficial?
+    placeholder: |
+      E.g., Builds are taking too long; caching can cut time by 40%.
+  validations:
+    required: true
+
+- type: textarea
+  id: impact
+  attributes:
+    label: 🔄 Impact
+    description: What parts of the pipeline or deployment could be affected? Is this breaking?
+    placeholder: |
+      E.g., Affects only the build stage. No impact on production deployment.
+  validations:
+    required: false
+
+- type: textarea
+  id: testing
+  attributes:
+    label: ✅ Testing Plan
+    description: How will you validate the change is working and safe?
+    placeholder: |
+      E.g., Test in a branch; verify that cache is being saved/restored by inspecting workflow logs.
+  validations:
+    required: true
+
+- type: input
+  id: related-issues
+  attributes:
+    label: 🔗 Related Issues or PRs
+    description: Link any related work.
+    placeholder: "#2345, #7890"
+  validations:
+    required: false

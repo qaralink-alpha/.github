@@ -1,0 +1,88 @@
+name: 🐛 Bug Report
+description: Create a report to help us improve
+labels: [bug]
+body:
+- type: markdown
+  attributes:
+    value: |
+      ## 🐛 Bug Report
+
+      Please provide detailed information so we can fix the issue efficiently.
+
+- type: textarea
+  id: description
+  attributes:
+    label: Bug Description
+    description: A clear and concise description of the bug.
+    placeholder: The page crashes when clicking 'Submit'...
+  validations:
+    required: true
+
+- type: textarea
+  id: steps
+  attributes:
+    label: Steps To Reproduce
+    description: Provide a step-by-step list so we can replicate the issue.
+    placeholder: |
+      1. Go to '...'
+      2. Click on '...'
+      3. Scroll down to '...'
+      4. See error
+  validations:
+    required: true
+
+- type: textarea
+  id: expected
+  attributes:
+    label: Expected Behavior
+    description: What did you expect to happen?
+  validations:
+    required: false
+
+- type: textarea
+  id: actual
+  attributes:
+    label: Actual Behavior
+    description: What actually happened instead?
+  validations:
+    required: false
+
+- type: textarea
+  id: screenshots
+  attributes:
+    label: Screenshots
+    description: If applicable, add screenshots to help explain your problem.
+  validations:
+    required: false
+
+- type: input
+  id: environment-os
+  attributes:
+    label: Environment - OS
+    description: e.g., macOS, Windows, Linux
+  validations:
+    required: false
+
+- type: input
+  id: environment-browser
+  attributes:
+    label: Environment - Browser/Runtime
+    description: e.g., Chrome, Firefox, Node.js
+  validations:
+    required: false
+
+- type: input
+  id: environment-version
+  attributes:
+    label: Environment - Version
+    description: e.g., App v22, Node.js 18.16.1
+  validations:
+    required: false
+
+- type: textarea
+  id: context
+  attributes:
+    label: Additional Context
+    description: Add any other context about the problem here.
+  validations:
+    required: false

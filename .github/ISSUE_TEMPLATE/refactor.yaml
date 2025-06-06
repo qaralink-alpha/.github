@@ -1,0 +1,58 @@
+name: ♻️ Refactor
+description: Propose a refactoring task to improve code quality without changing functionality.
+labels: [type:refactor]
+body:
+- type: markdown
+  attributes:
+    value: |
+      ## ♻️ Refactor Task
+      Use this template to describe a code refactoring task that improves readability, maintainability, or structure without changing external behavior.
+
+- type: textarea
+  id: context
+  attributes:
+    label: 🔍 Context
+    description: Why is this refactoring needed? What part of the codebase is affected?
+    placeholder: |
+      E.g., This module has become too complex and hard to test. Refactoring will simplify logic and improve test coverage.
+  validations:
+    required: true
+
+- type: textarea
+  id: scope
+  attributes:
+    label: 📦 Scope
+    description: What is in scope for this refactoring? Be clear about what *will* and *won't* be changed.
+    placeholder: |
+      E.g., Will refactor the `DataProcessor` class only. No changes to input/output interfaces or API behavior.
+  validations:
+    required: true
+
+- type: textarea
+  id: risks
+  attributes:
+    label: ⚠️ Potential Risks
+    description: Are there any side effects or risks (e.g., subtle bugs, performance changes)?
+    placeholder: |
+      E.g., There's a risk of regression in edge case X — tests must cover this.
+  validations:
+    required: false
+
+- type: textarea
+  id: tests
+  attributes:
+    label: ✅ Testing
+    description: How will you test that the refactoring did not break functionality?
+    placeholder: |
+      E.g., Run existing unit/integration tests, add tests for previously uncovered branches.
+  validations:
+    required: true
+
+- type: input
+  id: related-issues
+  attributes:
+    label: 🔗 Related Issues or PRs
+    description: Link any related tickets or PRs.
+    placeholder: "#1234, #5678"
+  validations:
+    required: false
