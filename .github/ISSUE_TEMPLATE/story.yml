@@ -1,0 +1,71 @@
+name: 📝 User story
+description: Specific development work items and user stories
+title: "[STORY] "
+type: 📝 Story
+assignees: []
+labels: []
+projects: []
+body:
+  - type: textarea
+    id: user_story
+    attributes:
+      label: User Story
+      description: |
+        **Template:** As a [user type], I want [functionality] so that [benefit]
+        
+        **Example:** _As a developer, I want database connection pooling so that the application can handle more concurrent users_
+      value: "As a [user type], I want [functionality] so that [benefit]"
+    validations:
+      required: true
+  
+  - type: textarea
+    id: acceptance_criteria
+    attributes:
+      label: Acceptance Criteria
+      description: Specific, testable criteria for completion
+      value: |
+        - [ ] Given [context], when [action], then [outcome]
+        - [ ] System performs [requirement] under [conditions]
+        - [ ] User can [action] and sees [result]
+        - [ ] ... [additional criteria as needed]
+    validations:
+      required: true
+  
+  - type: textarea
+    id: technical_notes
+    attributes:
+      label: Technical Notes
+      description: |
+        Implementation details, technical considerations, or constraints
+        
+        **Example:** _Use Redis for session storage, implement JWT tokens, add rate limiting middleware_
+      placeholder: "Include relevant technical context, APIs, database changes, or architectural decisions"
+    validations:
+      required: false
+  
+  - type: textarea
+    id: testing_requirements
+    attributes:
+      label: Testing Requirements
+      description: Specific testing scenarios and requirements
+      value: |
+        - Unit tests for [specific functions]
+        - Integration tests for [API endpoints]
+        - Manual testing scenarios for [user workflows]
+        - ... [any additional testing requirements]
+    validations:
+      required: false
+  
+  - type: textarea
+    id: definition_of_done
+    attributes:
+      label: Definition of Done
+      description: What must be completed for this story to be considered done?
+      value: |
+        - [ ] Code implemented and reviewed
+        - [ ] Tests written and passing
+        - [ ] Documentation updated
+        - [ ] Deployed to staging environment
+        - [ ] ... [any additional criteria]
+    validations:
+      required: false

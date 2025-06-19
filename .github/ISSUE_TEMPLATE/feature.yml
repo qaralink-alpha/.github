@@ -1,0 +1,97 @@
+name: 🔧 Feature request
+description: Suggest a new feature or enhancement
+title: "[FEAT] "
+type: 🔧 Feature
+assignees: []
+labels: []
+projects: []
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for suggesting a new feature! Please provide details about what you'd like to see.
+  
+  - type: textarea
+    id: feature_description
+    attributes:
+      label: Feature Description
+      description: |
+        A clear description of the feature you'd like to see
+        
+        **Example:** _Add bulk export functionality to allow users to download multiple reports as a single ZIP file_
+      placeholder: "Describe the feature and what it should do"
+    validations:
+      required: true
+  
+  - type: textarea
+    id: problem_statement
+    attributes:
+      label: Problem Statement
+      description: |
+        What problem does this feature solve?
+        
+        **Example:** _Users currently have to download reports one by one, which is time-consuming for large datasets_
+      placeholder: "Describe the problem or pain point this feature would address"
+    validations:
+      required: true
+  
+  - type: textarea
+    id: proposed_solution
+    attributes:
+      label: Proposed Solution
+      description: |
+        How do you envision this feature working?
+        
+        **Example:** _Add a "Select Multiple" checkbox and "Export Selected" button that creates a ZIP file with all chosen reports_
+      placeholder: "Describe your ideal solution and how users would interact with it"
+    validations:
+      required: true
+  
+  - type: textarea
+    id: user_stories
+    attributes:
+      label: User Stories
+      description: How would different users benefit from this feature?
+      value: |
+        - [ ] As a [user type], I want [functionality] so that [benefit]
+        - [ ] As a [user type], I want [functionality] so that [benefit]
+        - [ ] ... [additional user stories as needed]
+    validations:
+      required: false
+  
+  - type: textarea
+    id: acceptance_criteria
+    attributes:
+      label: Acceptance Criteria
+      description: How will we know this feature is complete and working correctly?
+      value: |
+        - [ ] User can [specific action] and sees [expected result]
+        - [ ] System performs [requirement] under [conditions]
+        - [ ] Feature handles [edge case] appropriately
+        - [ ] ... [additional criteria as needed]
+    validations:
+      required: false
+  
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives Considered
+      description: |
+        What other approaches have you considered?
+        
+        **Example:** _Considered email delivery of reports, but ZIP download provides immediate access_
+      placeholder: "Describe any alternative solutions or workarounds you've thought about"
+    validations:
+      required: false
+  
+  - type: textarea
+    id: additional_context
+    attributes:
+      label: Additional Context
+      description: |
+        Any other context or supporting materials
+        
+        **Examples:** _Mockups, screenshots from other tools, user feedback, technical constraints_
+      placeholder: "Mockups, examples from other tools, technical constraints, etc."
+    validations:
+      required: false

@@ -1,0 +1,87 @@
+name: 🔄 Pull Request
+description: Submit changes for review
+labels: []
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## 📝 Pull Request
+
+        Please provide details about your changes to help with the review process.
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      description: |
+        Provide a brief description of the changes in this PR
+        
+        **Example:** _Implement user authentication API with JWT tokens and role-based access control_
+      placeholder: "Describe what this PR accomplishes and the problem it solves"
+    validations:
+      required: true
+
+  - type: input
+    id: related_issues
+    attributes:
+      label: Related Issues
+      description: |
+        Link to any related issues
+        
+        **Format:** Fixes #123, Addresses #456, Closes #789
+      placeholder: "Fixes #123, Addresses #456"
+    validations:
+      required: false
+
+  - type: dropdown
+    id: change_type
+    attributes:
+      label: Type of Change
+      description: What type of change is this?
+      options:
+        - Bug fix
+        - New feature
+        - Enhancement
+        - Breaking change
+        - Documentation update
+        - Infrastructure/DevOps
+        - Refactor
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: testing
+    attributes:
+      label: Testing Performed
+      description: What testing have you done?
+      options:
+        - label: Unit tests added/updated
+        - label: Integration tests passing
+        - label: Manual testing completed
+        - label: No testing required
+
+  - type: checkboxes
+    id: checklist
+    attributes:
+      label: Review Checklist
+      description: Confirm you've completed these steps
+      options:
+        - label: My code follows the project's style guidelines
+        - label: I have performed a self-review of my code
+        - label: I have commented my code, particularly in hard-to-understand areas
+        - label: I have made corresponding changes to the documentation
+        - label: My changes generate no new warnings
+        - label: New and existing tests pass locally with my changes
+        - label: Any dependent changes have been merged and published
+
+  - type: textarea
+    id: additional_notes
+    attributes:
+      label: Additional Notes
+      description: |
+        Any additional information for reviewers
+        
+        **Examples:** _Database migration required, feature flag enabled, API breaking change requires coordination_
+      placeholder: "Special considerations, deployment notes, breaking changes, etc."
+    validations:
+      required: false

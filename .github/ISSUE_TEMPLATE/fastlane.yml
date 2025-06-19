@@ -1,0 +1,92 @@
+name: ⚡ Fastlane
+description: Minor changes ≤30 minutes (documentation, typos, config tweaks)
+title: "[FASTLANE] "
+type: ⚡ Fastlane
+assignees: []
+labels: []
+projects: []
+body:
+  - type: dropdown
+    id: fastlane_type
+    attributes:
+      label: Fastlane Type
+      description: What type of minor change is this?
+      options:
+        - 📝 Documentation Update
+        - 🔤 Typo/Text Correction
+        - ⚙️ Configuration Tweak
+        - 🏷️ Label/Metadata Update
+        - 📦 Dependency Version Bump
+        - 🧹 Code Cleanup (whitespace, formatting)
+        - 🔗 Link Fix
+        - 📋 Template Update
+    validations:
+      required: true
+  
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      description: |
+        Brief description of the minor change needed.
+        
+        **Example:** _Fix typo in README.md file - "recieve" should be "receive"_
+      placeholder: "Describe the specific change that needs to be made"
+    validations:
+      required: true
+  
+  - type: textarea
+    id: location
+    attributes:
+      label: File/Location
+      description: |
+        Where is the change needed? (file path, specific section, line number if known)
+        
+        **Example:** _src/components/LoginForm.tsx, line 42_
+        **Example:** _docs/api/README.md, "Authentication" section_
+      placeholder: "Specify the exact location of the change"
+    validations:
+      required: true
+  
+  - type: textarea
+    id: change_details
+    attributes:
+      label: Change Details
+      description: |
+        What exactly needs to be changed?
+        
+        **Example:** 
+        ```
+        Current: "recieve an email"
+        New: "receive an email"
+        ```
+      placeholder: "Provide before/after or specific change instructions"
+    validations:
+      required: true
+  
+  - type: checkboxes
+    id: fastlane_checklist
+    attributes:
+      label: Fastlane Validation
+      description: Confirm this meets Fastlane criteria
+      options:
+        - label: "✅ This change will take 30 minutes or less"
+          required: true
+        - label: "✅ This is a minor change (typo, docs, config, formatting)"
+          required: true
+        - label: "✅ This change does not require code review from multiple people"
+          required: true
+        - label: "✅ This change does not affect core functionality"
+          required: true
+  
+  - type: textarea
+    id: additional_context
+    attributes:
+      label: Additional Context
+      description: |
+        Any additional context, screenshots, or related information
+        
+        **Optional:** Screenshots, related issues, context for the change
+      placeholder: "Any additional information that might be helpful"
+    validations:
+      required: false
