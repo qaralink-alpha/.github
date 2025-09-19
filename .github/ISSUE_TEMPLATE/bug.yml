@@ -1,0 +1,86 @@
+name: 🐛 Bug Report
+description: Report a bug or unexpected behavior
+title: "[BUG] "
+type: 🐛 Bug
+assignees: []
+labels: []
+projects: []
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to report a bug! Please provide as much detail as possible.
+  
+  - type: textarea
+    id: bug_description
+    attributes:
+      label: Bug Description
+      description: |
+        A clear and concise description of what the bug is
+        
+        **Example:** _Login form throws 500 error when user enters valid credentials_
+      placeholder: "Describe what happened and what you expected to happen"
+    validations:
+      required: true
+  
+  - type: textarea
+    id: steps_to_reproduce
+    attributes:
+      label: Steps to Reproduce
+      description: Specific steps to reproduce the behavior
+      value: |
+        1. Go to '<specific page or location>'
+        2. Click on '<specific element>'
+        3. Enter '<specific data>'
+        4. See error '<describe what happens>'
+        5. ... [additional steps as needed]
+    validations:
+      required: true
+  
+  - type: textarea
+    id: expected_behavior
+    attributes:
+      label: Expected Behavior
+      description: |
+        What you expected to happen
+        
+        **Example:** _User should be redirected to dashboard after successful login_
+      placeholder: "Describe what should have happened"
+    validations:
+      required: true
+  
+  - type: textarea
+    id: actual_behavior
+    attributes:
+      label: Actual Behavior
+      description: |
+        What actually happened
+        
+        **Example:** _Server returns 500 Internal Server Error and displays generic error page_
+      placeholder: "Describe what actually occurred, including error messages or unexpected results"
+    validations:
+      required: true
+  
+  - type: textarea
+    id: environment
+    attributes:
+      label: Environment
+      description: Environment details where the bug occurred
+      value: |
+        - OS: <e.g. Windows 11, macOS 14, Ubuntu 22.04>
+        - Browser: <e.g. Chrome 120, Firefox 119, Safari 17>
+        - Version/Build: <e.g. v1.2.3, build #456>
+        - Environment: <e.g. Production, Staging, Local Development>
+        - ... [additional environment details]
+    validations:
+      required: false
+  
+  - type: textarea
+    id: additional_context
+    attributes:
+      label: Additional Context
+      description: |
+        Any other context about the problem
+      placeholder: "Screenshots, logs, related issues, workarounds, etc."
+    validations:
+      required: false

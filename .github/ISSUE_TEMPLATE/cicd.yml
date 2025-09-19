@@ -1,0 +1,97 @@
+name: 🤖 CI/CD
+description: CI/CD pipeline changes, deployment issues, or infrastructure work
+title: "[CI/CD] "
+type: 🤖 CI-CD
+assignees: []
+labels: []
+projects: []
+body:
+  - type: dropdown
+    id: cicd_type
+    attributes:
+      label: CI/CD Type
+      description: What type of CI/CD work is this?
+      options:
+        - 🔄 Pipeline Enhancement
+        - 🚀 Deployment Issue
+        - 🏗️ Infrastructure Change
+        - 🔐 Security/Secrets Update
+        - 📊 Monitoring/Observability
+        - 🧪 Testing Improvement
+    validations:
+      required: true
+  
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      description: |
+        What CI/CD changes or issues need to be addressed?
+        
+        **Example:** _Add automated database migration step to deployment pipeline for staging environment_
+      placeholder: "Describe the pipeline changes, deployment problems, or infrastructure needs"
+    validations:
+      required: true
+  
+  - type: textarea
+    id: current_behavior
+    attributes:
+      label: Current Behavior
+      description: |
+        How does the current CI/CD process work?
+        
+        **Example:** _Database migrations are run manually after each deployment, causing delays and potential errors_
+      placeholder: "Describe the current state of the pipeline or infrastructure"
+    validations:
+      required: false
+  
+  - type: textarea
+    id: desired_behavior
+    attributes:
+      label: Desired Behavior  
+      description: |
+        How should the CI/CD process work after this change?
+        
+        **Example:** _Migrations should run automatically as part of the deployment process, with rollback capability if they fail_
+      placeholder: "Describe the expected outcome after implementing changes"
+    validations:
+      required: true
+  
+  - type: textarea
+    id: technical_details
+    attributes:
+      label: Technical Details
+      description: |
+        Specific technical requirements or constraints
+        
+        **Example:** _Use GitHub Actions workflow, integrate with AWS RDS, add Slack notifications for failures_
+      placeholder: "Tools, services, configurations, environment variables, dependencies, etc."
+    validations:
+      required: false
+  
+  - type: textarea
+    id: acceptance_criteria
+    attributes:
+      label: Acceptance Criteria
+      description: How will we know this CI/CD work is complete?
+      value: |
+        - [ ] Pipeline runs successfully in test environment
+        - [ ] Deployment completes without manual intervention
+        - [ ] All existing tests continue to pass
+        - [ ] Monitoring/alerting is properly configured
+        - [ ] Documentation is updated
+        - [ ] ... [additional criteria as needed]
+    validations:
+      required: true
+  
+  - type: textarea
+    id: rollback_plan
+    attributes:
+      label: Rollback Plan
+      description: |
+        How can changes be reverted if something goes wrong?
+        
+        **Example:** _Revert to previous pipeline version via Git, restore previous infrastructure state via Terraform_
+      placeholder: "Describe the strategy to undo changes if issues occur"
+    validations:
+      required: false

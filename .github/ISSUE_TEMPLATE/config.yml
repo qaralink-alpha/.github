@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: 📋 Strategic Planning
+    url: https://github.com/qaralink-alpha/qara_foundation/issues/new/choose
+    about: Create Goals and Initiatives in the foundation repository
+  - name: 📚 Documentation
+    url: https://github.com/qaralink-alpha/qara_foundation/wiki
+    about: Project documentation and guidelines

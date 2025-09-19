@@ -1,0 +1,113 @@
+name: ♻️ Refactoring
+description: Code refactoring, technical debt, or architecture improvements
+title: "[REFC] "
+type: ♻️ Refactor
+assignees: []
+labels: []
+projects: []
+body:
+  - type: dropdown
+    id: refactor_type
+    attributes:
+      label: Refactor Type
+      description: What type of refactoring is this?
+      options:
+        - 🏗️ Architecture Improvement
+        - 🧹 Code Cleanup
+        - 📚 Technical Debt
+        - ⚡ Performance Optimization
+        - 🔧 Developer Experience
+        - 📦 Dependency Update
+    validations:
+      required: true
+  
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      description: |
+        What needs to be refactored and why?
+        
+        **Example:** _Refactor user authentication module to use dependency injection pattern for better testability and maintainability_
+      placeholder: "Describe the current code/architecture issues and why refactoring is needed"
+    validations:
+      required: true
+  
+  - type: textarea
+    id: current_state
+    attributes:
+      label: Current State
+      description: |
+        How does the code currently work?
+        
+        **Example:** _Authentication logic is tightly coupled with database calls, making unit testing difficult and violating single responsibility principle_
+      placeholder: "Describe the current implementation, patterns, or architecture that need improvement"
+    validations:
+      required: true
+  
+  - type: textarea
+    id: proposed_changes
+    attributes:
+      label: Proposed Changes
+      description: |
+        What changes do you propose?
+        
+        **Example:** _Extract database operations into repository interface, implement dependency injection container, separate authentication logic from data access_
+      placeholder: "Describe the refactoring approach, new patterns, or architectural changes you plan to implement"
+    validations:
+      required: true
+  
+  - type: textarea
+    id: benefits
+    attributes:
+      label: Benefits
+      description: What benefits will this refactoring provide?
+      value: |
+        - Improved code maintainability
+        - Better performance
+        - Reduced technical debt
+        - Enhanced developer experience
+        - Easier testing
+        - ... [additional benefits]
+    validations:
+      required: true
+  
+  - type: textarea
+    id: risks_considerations
+    attributes:
+      label: Risks & Considerations
+      description: |
+        What risks or considerations should we be aware of?
+        
+        **Example:** _May require updating existing unit tests, potential temporary performance impact during migration_
+      placeholder: "Breaking changes, migration path, testing strategy, rollback plan, performance impact, etc."
+    validations:
+      required: false
+  
+  - type: textarea
+    id: acceptance_criteria
+    attributes:
+      label: Acceptance Criteria
+      description: How will we know the refactoring is complete?
+      value: |
+        - [ ] Code follows new patterns/architecture
+        - [ ] All existing tests pass with refactored code
+        - [ ] New unit tests cover refactored components
+        - [ ] Performance meets or exceeds current benchmarks
+        - [ ] Code review completed
+        - [ ] Documentation updated
+        - [ ] ... [additional criteria as needed]
+    validations:
+      required: true
+  
+  - type: textarea
+    id: migration_plan
+    attributes:
+      label: Migration Plan
+      description: |
+        How will the refactoring be implemented safely?
+        
+        **Example:** _Implement new pattern alongside existing code, gradually migrate modules one by one, feature flag the new implementation_
+      placeholder: "Step-by-step approach to minimize risk during refactoring, including any necessary code freezes, testing phases, or deployment strategies"
+    validations:
+      required: false
