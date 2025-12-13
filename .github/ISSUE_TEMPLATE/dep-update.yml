@@ -1,0 +1,79 @@
+name: Dependency update
+description: Track a single dependency/component version bump
+title: "[dep-update] <name>: <from> -> <to>"
+labels: ["dependencies"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Use **one dependency/component update per ticket**.
+
+  - type: checkboxes
+    id: single_update
+    attributes:
+      label: Scope
+      options:
+        - label: I confirm this issue covers **one** dependency/component update only
+          required: true
+
+  - type: dropdown
+    id: dep_type
+    attributes:
+      label: Type
+      description: What kind of update is this?
+      options:
+        - Library
+        - Component (e.g., Keycloak, NATS, Postgres, Redis, ...)
+        - Other
+    validations:
+      required: true
+
+  - type: input
+    id: dep_name
+    attributes:
+      label: Name
+      description: Dependency/component name (e.g., "jackson-databind", "keycloak", "nats")
+      placeholder: keycloak
+    validations:
+      required: true
+
+  - type: input
+    id: current_version
+    attributes:
+      label: Current version
+      placeholder: 22.0.5
+    validations:
+      required: true
+
+  - type: input
+    id: bumped_version
+    attributes:
+      label: Target version (bumped)
+      placeholder: 23.0.1
+    validations:
+      required: true
+
+  - type: textarea
+    id: why
+    attributes:
+      label: Why is this update needed?
+      description: Include motivation (security advisory, bugfix, compatibility, feature, EOL, etc.)
+      placeholder: |
+        General reason for the update
+        - Security: CVE-XXXX-YYYY affects our usage because ...
+        - Bugfix: fixes ...
+        - Compatibility: required by ...
+    validations:
+      required: true
+
+  - type: textarea
+    id: approvers
+    attributes:
+      label: Approvers
+      description: List the people who must approve this update (GitHub handles can't be enforced, so list them here)
+      placeholder: |
+        - @jonathan-sinclair (Security)
+        - @vcasini (Platform)
+        - @fabien-qaralink (Service owner)
+    validations:
+      required: true
